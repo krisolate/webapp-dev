@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.site-header {
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #ccc;
+}
+
+.nav-link {
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: #999;
+}
+
+.profile-link {
+  margin-left: auto;
+}
+
+.home-layout {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.side-panel {
+  flex: 1;
+}
+
+.posts {
+  width: 50%;
+}
+
+.post {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #ddd;
+}
+
+.post p {
+  margin: 8px 0;
+}
+
+.post > .post-actions {
+  margin-top: 5px;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.site-footer {
+  min-height: 40px;
+  margin: 10px;
+}
+
+.form-page {
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 300px;
+  padding: 15px;
+  background: #ddd;
+}
+
+textarea {
+  min-height: 75px;
+}
+
+input,
+textarea {
+  padding: 5px;
+}
+
+.primary-button {
+  align-self: center;
+  padding: 6px 12px;
+}
+
+.login-card {
+  align-items: center;
+  text-align: center;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-card h1 + .text-link {
+  margin-top: 5px;
+}
+
+.login-card h1 ~ form {
+  width: 100%;
+}
+
+.text-link {
+  color: blue;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid blue;
+}
+
+@media (max-width: 600px) {
+  .side-panel {
+    display: none;
+  }
+
+  .posts {
+    width: 100%;
+  }
+
+  .home-layout {
+    flex-direction: column;
+  }
+}
