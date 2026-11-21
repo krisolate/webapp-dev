@@ -5,7 +5,7 @@
       "authorName": "User_1",
       "createdAt": "2025-01-30T09:15:00Z",
       "content": "Yahooo!",
-      "imageUrl": "./images/sdg14ta.jpg"
+      "imageUrl": "/images/sdg14ta.jpg"
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "authorName": "User_3",
       "createdAt": "2020-02-28T06:00:00Z",
       "content": "Hommikul kell 6 jooksma!",
-      "imageUrl": "./images/sus.jpg"
+      "imageUrl": "/images/sus.jpg"
     },
     {
       "id": 4,
@@ -33,14 +33,14 @@
       "authorName": "User_5",
       "createdAt": "2013-10-26T18:20:00Z",
       "content": "Tasuta õunu siin!",
-      "imageUrl": "./images/cat.jpg"
+      "imageUrl": "/images/cat.jpg"
     },
     {
       "id": 6,
       "authorName": "User_6",
       "createdAt": "2010-10-25T10:00:00Z",
       "content": "Beautiful night sky!",
-      "imageUrl": "./images/space.jpg"
+      "imageUrl": "/images/space.jpg"
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "authorName": "User_9",
       "createdAt": "2003-03-22T20:00:00Z",
       "content": "How do I activate the touch screen?",
-      "imageUrl": "./images/tv.jpg"
+      "imageUrl": "/images/tv.jpg"
     },
     {
       "id": 10,

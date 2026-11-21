@@ -2,46 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <title>webapp-dev</title>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="navbar" aria-label="Main navigation">
-        <a class="nav-link active" href="index.html">Home</a>
-        <a class="nav-link" href="addPost.html">Add Post</a>
-
-        <div class="profile-menu">
-          <button
-            class="profile-button"
-            id="profile-button"
-            type="button"
-            aria-label="Open profile menu"
-            aria-expanded="false"
-          >
-            <img src="./images/anon.png" alt="pfp" />
-          </button>
-
-          <div class="dropdown-menu" id="profile-dropdown" hidden>
-            <p class="user-name">John Doe</p>
-            <p class="user-email">john.doe@ut.ee</p>
-            <hr />
-            <button type="button" id="logout-button">Log out</button>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="home-layout">
-      <aside class="side-panel" aria-label="Left sidebar"></aside>
-
-      <section class="posts" id="posts-container" aria-label="Posts"></section>
-
-      <aside class="side-panel" aria-label="Right sidebar"></aside>
-    </main>
-
-    <footer class="site-footer"></footer>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
