@@ -1,38 +1,43 @@
 <template>
   <article v-if="post" class="post">
-    <div class="post-meta">
-      <div class="post-author">
-        <img class="small-avatar" :src="avatarUrl" alt="Anonymous avatar" />
+    <div class="post-layout">
+      <div class="post-content">
+        <div class="post-meta">
+          <div class="post-author">
+            <img class="small-avatar" :src="avatarUrl" alt="Anonymous avatar" />
+            <span>{{ post.authorName }}</span>
+          </div>
 
-        <span>{{ post.authorName }}</span>
+          <time :datetime="post.createdAt">
+            {{ formattedDate }}
+          </time>
+        </div>
+
+        <img
+          v-if="post.imageUrl"
+          class="post-image"
+          :src="postImageUrl"
+          :alt="'Image attached to post by ' + post.authorName"
+          loading="lazy"
+        />
+
+        <p class="post-body">
+          {{ post.content }}
+        </p>
+
+        <div class="post-actions">
+          <button
+            class="like-button"
+            type="button"
+            :aria-label="'Like post. Current likes: ' + post.likes"
+            @click="likePost"
+          >
+            <img :src="likeImageUrl" alt="Like" class="like-icon" />
+          </button>
+
+          <div class="post-likes">{{ post.likes }} likes</div>
+        </div>
       </div>
-
-      <time :datetime="post.createdAt">
-        {{ formattedDate }}
-      </time>
-    </div>
-
-    <img
-      v-if="post.imageUrl"
-      class="post-image"
-      :src="postImageUrl"
-      :alt="'Image attached to post by ' + post.authorName"
-      loading="lazy"
-    />
-
-    <p class="post-body">
-      {{ post.content }}
-    </p>
-
-    <div class="post-actions">
-      <button
-        class="like-button"
-        type="button"
-        :aria-label="'Like post. Current likes: ' + post.likes"
-        @click="likePost"
-      >
-        👍 {{ post.likes }}
-      </button>
     </div>
   </article>
 </template>
@@ -64,13 +69,17 @@ export default {
     postImageUrl() {
       if (!this.post?.imageUrl) return "";
 
-      const imagePath = this.post.imageUrl.replace(/^\.?\//, "");
+      const imagePath = this.post.imageUrl.replace(/^.*?\//, "");
 
       return `${import.meta.env.BASE_URL}${imagePath}`;
     },
 
     avatarUrl() {
       return `${import.meta.env.BASE_URL}images/anon.png`;
+    },
+
+    likeImageUrl() {
+      return `${import.meta.env.BASE_URL}images/like.png`;
     },
   },
 

@@ -7,18 +7,23 @@
 }
 
 :root {
-  --background: #111214;
-  --surface: #1b1d20;
-  --surface-hover: #25282c;
-  --navbar: #191a1d;
+  --background: #252522;
 
-  --border: #2d3035;
+  --surface: #191918;
+  --surface-hover: #30302d;
+  --navbar: #1d1d1b;
 
-  --text: #e8e9eb;
-  --text-secondary: #969ba3;
+  --border: #30302d;
+  --border-hover: #30302d;
 
-  --accent: #ff7043;
-  --accent-hover: #e85e35;
+  --text: #e5e5e2;
+  --text-secondary: #92928d;
+
+  --accent: #6c1802;
+  --accent-hover: #ff555a;
+  --accent-text: #ffffff;
+
+  --input-background: #20201e;
 
   --radius: 6px;
 }
@@ -115,7 +120,6 @@ body {
   margin-bottom: 18px;
   padding: 16px;
   background: var(--surface);
-  border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
@@ -170,10 +174,37 @@ body {
   border-radius: 4px;
 }
 
-.post > .post-actions {
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.like-button:hover .like-icon {
+  transform: scale(1.15);
+}
+
+.post-likes {
+  font-size: 13px;
+  color: #777;
 }
 
 .like-button {
@@ -301,7 +332,7 @@ textarea:focus {
   padding: 10px 20px;
   margin-top: 8px;
   background: var(--accent);
-  color: #171717;
+  color: var(--accent-text);
   border: none;
   border-radius: 4px;
   font-size: 14px;
