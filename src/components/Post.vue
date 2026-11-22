@@ -2,11 +2,7 @@
   <article v-if="post" class="post">
     <div class="post-meta">
       <div class="post-author">
-        <img
-          class="small-avatar"
-          src="/images/anon.png"
-          alt="Anonymous avatar"
-        />
+        <img class="small-avatar" :src="avatarUrl" alt="Anonymous avatar" />
 
         <span>{{ post.authorName }}</span>
       </div>
@@ -19,7 +15,7 @@
     <img
       v-if="post.imageUrl"
       class="post-image"
-      :src="`${import.meta.env.BASE_URL}${post.imageUrl.replace('./', '')}`"
+      :src="postImageUrl"
       :alt="'Image attached to post by ' + post.authorName"
       loading="lazy"
     />
@@ -63,6 +59,18 @@ export default {
         month: "short",
         day: "2-digit",
       }).format(new Date(this.post.createdAt));
+    },
+
+    postImageUrl() {
+      if (!this.post?.imageUrl) return "";
+
+      const imagePath = this.post.imageUrl.replace(/^\.?\//, "");
+
+      return `${import.meta.env.BASE_URL}${imagePath}`;
+    },
+
+    avatarUrl() {
+      return `${import.meta.env.BASE_URL}images/anon.png`;
     },
   },
 
