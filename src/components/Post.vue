@@ -19,7 +19,7 @@
     <img
       v-if="post.imageUrl"
       class="post-image"
-      :src="`${import.meta.env.BASE_URL}${post.image}`"
+      :src="`${import.meta.env.BASE_URL}${post.imageUrl.replace('./', '')}`"
       :alt="'Image attached to post by ' + post.authorName"
       loading="lazy"
     />
