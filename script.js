@@ -3,18 +3,15 @@ const postsContainer = document.getElementById("posts-container");
 // Fetch posts from online API
 async function loadPosts() {
   try {
-    // const response = await fetch(
-    //     "https://my-json-server.typicode.com/krisolate/webapp-dev/posts"
-    // );
-
-    const response = await fetch("./posts.json");
+    const response = await fetch(
+      "https://raw.githubusercontent.com/krisolate/webapp-dev/main/db.json",
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
     }
 
     const data = await response.json();
-
     const posts = Array.isArray(data) ? data : data.posts;
 
     displayPosts(posts);
